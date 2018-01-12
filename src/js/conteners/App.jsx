@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 class App extends React.Component {
 	render () {
-    console.log(this.props)
 		return (
 			<h1>{this.props.name}</h1>
 		)
@@ -11,10 +10,9 @@ class App extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
-      name: state.hello.name,
-  };
-};
+		name: state.hello.name,
+  }
+}
 
 export default connect(mapStateToProps)(App);
