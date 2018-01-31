@@ -6,7 +6,8 @@ import Reducer from './reducer'
 const initilState = {}
 
 const store = createStore (
-  Reducer
+  Reducer,
+  initilState
 )
 
 export default store
