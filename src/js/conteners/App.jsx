@@ -1,9 +1,19 @@
 import React from 'react'
 
-export default class App extends React.Component {
+import { connect } from 'react-redux'
+
+class App extends React.Component {
   render () {
     return (
-      <h1>hello world</h1>
+      <h1>{this.props.user.name}</h1>
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+
+export default connect(mapStateToProps)(App)
