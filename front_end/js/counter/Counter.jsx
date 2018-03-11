@@ -4,9 +4,9 @@ import ReactDom from 'react-dom'
 import Add from './Add'
 import Reduce from './Reduce'
 import Header from './Header'
-import Style from './App.css'
+import Style from '../App.css'
 
-export default class App extends Component {
+export default class Counter extends Component {
   constructor(){
     super()
     this.state = {
@@ -73,22 +73,25 @@ export default class App extends Component {
     const props = Object.assign(
       {},
       {...this.state},
+      {...this.props},
       {addCount: this.addCount.bind(this)},
       {reduceCount: this.reduceCount.bind(this)},
       {changeButton: this.changeButton.bind(this)}
     )
     const modalOpen = this.state.isOpen
-    console.log(props.history);
     return (
       <div>
         {this.state.isOpen ? this.historyModal(props.history) : null}
-        <Header count={props.count} />
+        <Header count={props.count} user={props.user}/>
         {this.state.isAdd
           ? <Add {...props}/>
           : <Reduce {...props}/>
         }
         <button type="button" onClick={() => this.changeModalStatus(modalOpen)}>
           履歴一覧
+        </button>
+        <button type="button" onClick={() => this.props.onSignout()}>
+          ログアウト
         </button>
       </div>
     )

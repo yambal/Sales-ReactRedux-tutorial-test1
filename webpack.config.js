@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-	context: path.join(__dirname, "src"),
+	context: path.join(__dirname, "front_end"),
 	devtool: debug ? "inline-sourcemap" : false,
 	entry: "./index.js",
 	resolve: {
@@ -39,7 +39,7 @@ module.exports = {
 		]
 	},
 	output: {
-		path: __dirname + "/src/",
+		path: __dirname + "/public/",
 		filename: "index.min.js"
 	},
 	plugins: debug ? [] : [

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
 
-import Style from './App.css'
+import Style from '../App.css'
 
 export default class Add extends Component {
   constructor(props){
