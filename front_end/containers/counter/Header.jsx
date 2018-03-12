@@ -10,12 +10,12 @@ export default class Header extends Component {
     const name = this.props.user.name
     return (
       <div>
-      <p>
+        <p>
         count numbert : {count}
-      </p>
-      <p>
-        user name: {name}
-      </p>
+        </p>
+        <p>
+          user name:{name}
+        </p>
       </div>
     )
   }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import ReactDom from 'react-dom'
-import request from 'superagent'
 
 import Style from './App.css'
 
@@ -8,7 +7,10 @@ export default class Auth extends Component {
   constructor(props){
     super(props)
     this.state = {
-      user: this.props.user,
+      user:{
+        email: '',
+        password: ''
+      }
     }
   }
 
@@ -21,20 +23,7 @@ export default class Auth extends Component {
   }
   handleSubmit(e){
     e.preventDefault()
-    const url = 'http://0.0.0.0:8080/api/user/signin'
-    request
-      .post(url)
-      .set('Content-Type', 'application/json')
-      .send({
-        user: this.state.user
-      })
-      .then((res) => {
-        const user = res.body
-        this.props.fetchUser(user)
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    this.props.setUser(this.state.user)
   }
   render(){
     const user = this.state.user
