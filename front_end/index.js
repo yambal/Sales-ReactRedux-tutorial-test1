@@ -1,16 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import { ConnectedRouter } from 'react-router-redux'
-import { Provider } from 'react-redux'
 
-import Auth from './containers/Auth'
-import store, { history } from './modules/Store'
+import Auth from './js/Auth.jsx'
 
-ReactDom.render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <Auth />
-    </ConnectedRouter>
-  </Provider>,
- document.getElementById('app')
-)
+ReactDom.render(<Auth />, document.getElementById('app'))
