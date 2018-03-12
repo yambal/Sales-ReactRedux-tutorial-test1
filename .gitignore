@@ -4,3 +4,5 @@ npm-debug.log
 log
 
 tmp
+
+public/index.min.js
