@@ -1,8 +1,7 @@
-module Test
-  class API < Grape::API
+class API < Grape::API
     format :json
 
-    resource :api do
+    resource :user do
       desc "Return Hello"
       get :all do
         @user = User.all
@@ -10,5 +9,4 @@ module Test
         #{message: "Hello Grape"}
       end
     end
-  end
 end
