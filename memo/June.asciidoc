@@ -1,0 +1,6 @@
+== ＊課題①＊ Reactでアプリ作る
+環境はgitからclone +
+https://github.com/jo-315/sales-ReactRedux-tutorial-test2
+
+=== とりあえずAPIのひな型完成
+http://localhost:8080/api/v1/user/all
